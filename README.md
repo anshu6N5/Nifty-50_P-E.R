@@ -34,11 +34,11 @@ nifty <- Cl(NSEI)
 price <- as.numeric(nifty["2025-07-15"])
 
 # Step 3: Estimate P/E Ratio
-eps <- 1114.86
+eps <- 1111.128319
 pe_ratio <- price / eps
 
 # Step 4: Compare with Historical P/E
-historical_avg <- 22
+historical_avg <- 20
 
 # Step 5: Prepare Data Frame
 pe_on_date <- as.numeric(last(pe_ratio))
