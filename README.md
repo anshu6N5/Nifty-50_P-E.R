@@ -41,14 +41,15 @@ pe_ratio <- price / eps
 historical_avg <- 22
 
 # Step 5: Prepare Data Frame
+pe_on_date <- as.numeric(last(pe_ratio))
 pe_df <- data.frame(
   Type = c("Estimated P/E (15-Jul-2025)", "Historical Avg P/E"),
   PE = c(pe_ratio, historical_avg)
 )
 
 ggplot(pe_df, aes(x = Type, y = PE)) +
-  geom_bar(stat = "identity", width = 0.6, fill = c("salmon", "skyblue")) +
-  geom_text(aes(label = round(PE, 2)), vjust = -0.5, size = 5) +
+  geom_bar(stat = "identity", width = 0.6, fill = c("salmon", "navyblue")) +
+  geom_text(aes(label = round(PE, 2)), vjust = -0.5, size = 3.5) +
   labs(
     title = "Nifty 50 P/E Comparison",
     subtitle = "Current P/E vs Historical P/E (as on 15/07/2025)",
